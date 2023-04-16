@@ -19,7 +19,7 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Животное имеет: \n\tРост: " + height + ";\n\tВес: " + weight +";\n\tЦвет глаз: "+eyeColor;
+        return "Животное имеет{ Рост: " + height + ", Вес: " + weight +", Цвет глаз: "+eyeColor+"}";
     }
 
     public double getWeight() {
