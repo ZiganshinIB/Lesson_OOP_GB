@@ -8,9 +8,9 @@ public abstract class PetAnimal extends Animal {
     private String breed;
     private Boolean isVaccinations;
     private String coatColor;
-    private Date birthdate;
+    private String birthdate;
 
-    public PetAnimal(double height, double weight, String eyeColor, String nickname, String breed, Boolean isVaccinations, String coatColor, Date birthdate) {
+    public PetAnimal(double height, double weight, String eyeColor, String nickname, String breed, Boolean isVaccinations, String coatColor, String birthdate) {
         super(height, weight, eyeColor);
         this.nickname = nickname;
         this.breed = breed;

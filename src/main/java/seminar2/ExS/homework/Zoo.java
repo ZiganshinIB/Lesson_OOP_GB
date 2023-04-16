@@ -23,7 +23,7 @@ public class Zoo implements ICollection<Animal>, IVoice {
     }
 
     @Override
-    public boolean remote(Animal element) {
+    public boolean remove(Animal element) {
         return animals.remove(element);
     }
 
@@ -35,7 +35,7 @@ public class Zoo implements ICollection<Animal>, IVoice {
     }
 
     @Override
-    public Animal remote(int index) {
+    public Animal remove(int index) {
         return animals.remove(index);
     }
 

@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Tiger extends WildAnimal {
 
-    public Tiger(double height, double weight, String eyeColor, String location, Date dateLocation) {
+    public Tiger(double height, double weight, String eyeColor, String location, String dateLocation) {
         super(height, weight, eyeColor, location, dateLocation);
     }
 

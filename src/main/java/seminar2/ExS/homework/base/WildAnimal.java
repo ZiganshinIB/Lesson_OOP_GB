@@ -4,9 +4,9 @@ import java.util.Date;
 
 public abstract class WildAnimal extends Animal{
     private String location;
-    private Date dateLocation;
+    private String dateLocation;
 
-    public WildAnimal(double height, double weight, String eyeColor, String location, Date dateLocation) {
+    public WildAnimal(double height, double weight, String eyeColor, String location, String dateLocation) {
         super(height, weight, eyeColor);
         this.location = location;
         this.dateLocation = dateLocation;

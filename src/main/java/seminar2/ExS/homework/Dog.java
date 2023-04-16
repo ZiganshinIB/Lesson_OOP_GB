@@ -9,13 +9,13 @@ import java.util.TreeMap;
 public class Dog extends PetAnimal implements ITraining {
     private Boolean isTrained;
 
-    public Dog(double height, double weight, String eyeColor, String nickname, String breed, Boolean isVaccinations, String coatColor, Date birthdate) {
+    public Dog(double height, double weight, String eyeColor, String nickname, String breed, Boolean isVaccinations, String coatColor, String birthdate) {
         super(height, weight, eyeColor, nickname, breed, isVaccinations, coatColor, birthdate);
         isTrained = false;
     }
 
 
-    public Dog(double height, double weight, String eyeColor, String nickname, String breed, Boolean isVaccinations, String coatColor, Date birthdate, Boolean isTrained) {
+    public Dog(double height, double weight, String eyeColor, String nickname, String breed, Boolean isVaccinations, String coatColor, String birthdate, Boolean isTrained) {
         super(height, weight, eyeColor, nickname, breed, isVaccinations, coatColor, birthdate);
         this.isTrained = isTrained;
     }
