@@ -1,4 +1,4 @@
-package seminar2.ExS;
+package seminar2.ExS.figure;
 
 public interface Figure {
     double arial();

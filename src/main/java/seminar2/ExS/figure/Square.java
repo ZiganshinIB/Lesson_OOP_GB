@@ -1,4 +1,4 @@
-package seminar2.ExS;
+package seminar2.ExS.figure;
 
 public class Square implements Figure {
     private Point2D point1;

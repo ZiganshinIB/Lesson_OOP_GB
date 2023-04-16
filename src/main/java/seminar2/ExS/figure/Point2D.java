@@ -1,4 +1,4 @@
-package seminar2.ExS;
+package seminar2.ExS.figure;
 
 public class Point2D {
     private double x;
