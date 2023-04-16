@@ -1,6 +1,6 @@
 package seminar2.ExS.homework.base;
 
-public abstract class Animal {
+public abstract class Animal implements IVoice {
     private double height;
     private double weight;
     private String eyeColor;
