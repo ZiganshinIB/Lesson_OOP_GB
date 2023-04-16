@@ -1,4 +1,4 @@
-package seminar2.ExS.schollers.base;
+package seminar2.ExS;
 
 public interface Figure {
     double arial();

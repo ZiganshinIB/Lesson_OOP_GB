@@ -18,6 +18,11 @@ public abstract class Schoolboy {
         return classNumber;
     }
 
+    @Override
+    public String toString() {
+        return "Я " + fullName + " учусь" + classNumber +" классе";
+    }
+
     protected void upClass(){
         this.classNumber++;
     }

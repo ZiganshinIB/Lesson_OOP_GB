@@ -1,7 +1,5 @@
 package seminar2.ExS;
 
-import seminar2.ExS.schollers.base.Figure;
-
 public class Square implements Figure {
     private Point2D point1;
     private Point2D point2;

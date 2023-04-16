@@ -18,7 +18,7 @@ public class Program {
         schoolboys.add(new SeniorSchoolboy("Stive", 10));
         schoolboys.add(new SeniorSchoolboy("Petr S.", 11));
         for (var item: schoolboys){
-            System.out.println("Я " + item.getFullName()+ " ученик " + item.getClassNumber() + " класса");
+            System.out.println(item);
             showInfo(item);
             System.out.println();
         }
