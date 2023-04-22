@@ -15,12 +15,8 @@ public abstract class Polygon extends Figure implements IPeremetr {
     }
 
     protected void setLensEge(Double[] lensEge){
-        assert lensEge.length == numberEgge;
-        for (int i = 0; i < numberEgge; i++) {
-            Double item = lensEge[i];
-            assert item > 0.0;
-            this.lensEge[i] = lensEge[i];
-        }
+        if (lensEge.length != numberEgge) throw new AssertionError();
+        this.lensEge = lensEge.clone();
     }
 
     protected Double[] getLensEge(){
