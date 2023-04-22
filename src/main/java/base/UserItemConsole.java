@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Function;
 
 
 /**
@@ -23,17 +24,26 @@ public abstract class UserItemConsole<T> extends BaseConsole{
     /**
      * Список элементов которые храним
      */
-    protected ArrayList<T> itemList;
+    protected List<T> itemList;
 
     /**
      * Запускает наш командер
      */
 
+    /**
+     * Инициализация типов элементов
+     */
+    protected abstract void initTypeItem();
+
+    /**
+     * Добавить элемент
+     */
+    protected abstract void addItem();
+
     protected UserItemConsole(){
         super();
         setElements = new HashSet<>();
         initTypeItem();
-        itemList = new ArrayList<>();
     }
 
     /**
@@ -46,10 +56,6 @@ public abstract class UserItemConsole<T> extends BaseConsole{
         commandList.add("Показать все элементы");
     }
 
-    /**
-     * Инициализация типов элементов
-     */
-    protected abstract void initTypeItem();
 
     /**
      * Выполнение команд
@@ -82,10 +88,6 @@ public abstract class UserItemConsole<T> extends BaseConsole{
         System.out.println();
     }
 
-    /**
-     * Добавить элемент
-     */
-    protected abstract void addItem();
 
     /**
      * Удалить элемент
@@ -99,8 +101,6 @@ public abstract class UserItemConsole<T> extends BaseConsole{
     protected void showItem(T item){
         System.out.println(item);
     }
-
-
 
 
 }

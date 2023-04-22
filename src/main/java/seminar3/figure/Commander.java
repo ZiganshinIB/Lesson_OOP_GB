@@ -9,6 +9,7 @@ public class Commander extends UserItemConsole<Figure> {
 
     public Commander(){
         super();
+        itemList = new Space2D();
     }
 
     @Override
@@ -16,6 +17,8 @@ public class Commander extends UserItemConsole<Figure> {
         commandList.add("Добавить фигуру");
         commandList.add("Убрать фигуру");
         commandList.add("Показать все фигуры");
+        commandList.add("Сортировать");
+        commandList.add("Вывести информации о всех периметах, площадях и длиннах окружности всех фигур");
     }
 
 
@@ -45,13 +48,29 @@ public class Commander extends UserItemConsole<Figure> {
             case 2:
                 showItems();
                 break;
+            case 3:
+                sortItems();
+                break;
+            case 4:
+                showInformation();
+                break;
             default:
                 System.out.println("Пока ничего не делаю");
                 break;
         }
     }
 
-    protected void showType() {
+    private void showInformation() {
+        for (int i = 0; i < itemList.size(); i++) {
+            System.out.println(((Space2D) itemList).getInformation(i));
+        }
+    }
+
+    private void sortItems() {
+        ((Space2D)itemList).sortArea();
+    }
+
+    private void showType() {
         System.out.println("Выберите фигуру если вы передумали напиште \"" + STOP_ADD_ITEM_IN_LIST + "\": ");
         for (var element: setElements) {
             System.out.println(element);
