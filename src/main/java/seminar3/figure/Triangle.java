@@ -32,7 +32,7 @@ public class Triangle extends Polygon {
 //S=√p (p-a) (p-b) (p-c)
     @Override
     public Double getArea() {
-        Double p = getPeremetr();
+        Double p = getPeremetr()/2;
         return Math.sqrt(p*(p-side1)*(p-side2)*(p-side3));
     }
 
