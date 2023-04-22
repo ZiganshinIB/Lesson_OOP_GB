@@ -1,12 +1,7 @@
 package base;
 
-import seminar2.ExS.homework.base.UserConsole;
-
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
-import java.util.function.Function;
 
 
 /**
@@ -39,6 +34,11 @@ public abstract class UserItemConsole<T> extends BaseConsole{
      * Добавить элемент
      */
     protected abstract void addItem();
+
+    /**
+     * Созадть элемент
+     */
+    protected abstract T createItem(String type_name);
 
     protected UserItemConsole(){
         super();

@@ -19,6 +19,7 @@ public class Commander extends UserItemConsole<Figure> {
         commandList.add("Показать все фигуры");
         commandList.add("Сортировать");
         commandList.add("Вывести информации о всех периметах, площадях и длиннах окружности всех фигур");
+        commandList.add("Поменять фигуру");
     }
 
 
@@ -54,10 +55,34 @@ public class Commander extends UserItemConsole<Figure> {
             case 4:
                 showInformation();
                 break;
+            case 5:
+                try {
+                    changeFigure();
+                }catch (Exception e){
+                    System.out.println("Изменить не получилось");
+                    e.printStackTrace();
+                }
+
+                break;
             default:
                 System.out.println("Пока ничего не делаю");
                 break;
         }
+    }
+
+    private void changeFigure() {
+        System.out.println("Напишите индекс фигуры");
+        int index = scanner.nextInt();
+        showType();
+        String typeName = scanner.next();
+        while (!setElements.contains(typeName)){
+            if(STOP_ADD_ITEM_IN_LIST.equalsIgnoreCase(typeName)) return;
+            System.out.println("Вы ошиблись такой фигуры :(" + typeName + ")");
+            showType();
+            typeName = scanner.next();
+        }
+        ((Space2D) itemList).change(index, createItem(typeName));
+
     }
 
     private void showInformation() {
@@ -90,26 +115,29 @@ public class Commander extends UserItemConsole<Figure> {
             showType();
             typeName = scanner.next();
         }
-        //....
+        itemList.add(createItem(typeName));
+    }
 
+    @Override
+    protected Figure createItem(String typeName) {
         if (
                 typeName.equalsIgnoreCase("Круг")
         ){
             System.out.println("Введите радиус");
             Double r = scanner.nextDouble();
-            itemList.add(new Circle(r));
+            return new Circle(r);
         }
         // Polygon
         if (
                 typeName.equalsIgnoreCase("Квадрат") ||
-                typeName.equalsIgnoreCase("Треугольник") ||
-                typeName.equalsIgnoreCase("Прямоугольник")
+                        typeName.equalsIgnoreCase("Треугольник") ||
+                        typeName.equalsIgnoreCase("Прямоугольник")
         ){
 
             // Rectangle
             if(
                     typeName.equalsIgnoreCase("Прямоугольник") ||
-                    typeName.equalsIgnoreCase("Квадрат")
+                            typeName.equalsIgnoreCase("Квадрат")
             ){
                 // Square
                 if(
@@ -117,7 +145,7 @@ public class Commander extends UserItemConsole<Figure> {
                 ){
                     System.out.println("Введите сторону квадрата: ");
                     Double side = scanner.nextDouble();
-                    itemList.add(new Square(side));
+                    return new Square(side);
                 }
                 // Rectangle
                 if (
@@ -127,7 +155,7 @@ public class Commander extends UserItemConsole<Figure> {
                     Double width = scanner.nextDouble();
                     System.out.println("Введите высоту прямоугольника:");
                     Double height = scanner.nextDouble();
-                    itemList.add(new Rectangle(width, height));
+                    return new Rectangle(width, height);
 
 
                 }
@@ -142,9 +170,10 @@ public class Commander extends UserItemConsole<Figure> {
                 Double side2 = scanner.nextDouble();
                 System.out.println("Введите 3 сторону треугольника: ");
                 Double side3 = scanner.nextDouble();
-                itemList.add(new Triangle(side1, side2, side3));
+                return new Triangle(side1, side2, side3);
             }
         }
+        throw new NullPointerException("Нет такой фигуры");
     }
 
     @Override
