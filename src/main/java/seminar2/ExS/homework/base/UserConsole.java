@@ -4,4 +4,6 @@ public interface UserConsole {
 
     void init();
 
+    void addElement();
+
 }
