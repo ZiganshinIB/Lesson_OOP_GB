@@ -26,4 +26,9 @@ public class Rectangle extends Polygon {
         return "Прямоугольник с шириной= "+ width+"; высотой= "+height;
     }
 
+    @Override
+    public String typeName() {
+        return "Прямоугольник";
+    }
+
 }

@@ -11,4 +11,9 @@ public class Square extends Rectangle{
     public String toString() {
         return "Квадрат с a= "+ side;
     }
+
+    @Override
+    public String typeName() {
+        return "Квадрат";
+    }
 }

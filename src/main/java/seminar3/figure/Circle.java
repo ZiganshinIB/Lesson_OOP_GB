@@ -17,6 +17,11 @@ public class Circle extends Figure implements CurvedLen {
     }
 
     @Override
+    public String typeName() {
+        return "Круг";
+    }
+
+    @Override
     public Double getLen() {
         return Math.PI*2*this.radius;
     }
