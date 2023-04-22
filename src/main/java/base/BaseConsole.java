@@ -12,6 +12,7 @@ public abstract class BaseConsole implements BaseConsoleMaster{
     protected List<String> commandList;
 
     protected abstract void initCommand();
+    protected abstract void compel(Integer number);
 
     BaseConsole(){
         this.scanner = new Scanner(System.in);
@@ -20,17 +21,13 @@ public abstract class BaseConsole implements BaseConsoleMaster{
     }
     @Override
     public void start() {
-        System.out.println("Выбирете команду из списка (если хотите выйти введите" +STOP_CODE_COMMAND+"):");
-        for (int i = 0; i < commandList.size(); i++) {
-            System.out.println("\t"+i + ") "+commandList.get(i));
-        }
+        System.out.println("Выбирете команду из списка (если хотите выйти введите" + STOP_CODE_COMMAND +"):");
+        showCommand();
         int numberCommand = scanner.nextInt();
         while (numberCommand != STOP_CODE_COMMAND){
             compel(numberCommand);
-            System.out.println("Выбирете команду из списка (если хотите выйти введите -1):");
-            for (int i = 0; i < commandList.size(); i++) {
-                System.out.println("\t"+i + ") "+commandList.get(i));
-            }
+            System.out.println("Выбирете команду из списка (если хотите выйти введите "+ STOP_CODE_COMMAND +"):");
+            showCommand();
             numberCommand = scanner.nextInt();
         }
     }
@@ -39,10 +36,6 @@ public abstract class BaseConsole implements BaseConsoleMaster{
     @Override
     public void showCommand() {
         for (int i = 0; i < commandList.size(); i++)
-            System.out.println(i+". "+commandList.get(i));
-
-
+            System.out.println("\t"+ i+". "+commandList.get(i));
     }
-
-    protected abstract void compel(Integer number);
 }
