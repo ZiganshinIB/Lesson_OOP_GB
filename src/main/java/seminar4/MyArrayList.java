@@ -3,6 +3,8 @@ package seminar4;
 import seminar4.base.MyListNumber;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+
 public class MyArrayList <T extends Number> extends MyListNumber {
     private T[] items;
     private int size;
@@ -51,8 +53,68 @@ public class MyArrayList <T extends Number> extends MyListNumber {
      */
     @Override
     public T getMax() {
-        return null;
+        if (items[0] instanceof Double) return (T) getMaxDouble();
+        if (items[0] instanceof Integer) return (T) getMaxInteger();
+        if (items[0] instanceof Long) return (T) getMaxLong();
+        if (items[0] instanceof Short) return (T) getMaxShort();
+        if (items[0] instanceof Float) return (T) getMaxFloat();
+        if (items[0] instanceof Byte) return (T) getMaxByte();
+        // Крайний случай
+        var max = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (max.hashCode() < (this.items[i].hashCode())) max = items[i];
+        }
+        return max;
     }
+
+    private Byte getMaxByte() {
+        var max = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (max.byteValue() < (this.items[i].byteValue())) max = items[i];
+        }
+        return max.byteValue();
+    }
+
+    private Float getMaxFloat() {
+        var max = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (max.floatValue() < (this.items[i].floatValue())) max = items[i];
+        }
+        return max.floatValue();
+    }
+
+    private Short getMaxShort() {
+        var max = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (max.shortValue() < (this.items[i].shortValue())) max = items[i];
+        }
+        return max.shortValue();
+    }
+
+    private Long getMaxLong() {
+        var max = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (max.longValue() < (this.items[i].longValue())) max = items[i];
+        }
+        return max.longValue();
+    }
+
+    private Integer getMaxInteger() {
+        var max = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (max.intValue() < (this.items[i].intValue())) max = items[i];
+        }
+        return max.intValue();
+    }
+
+    private Double getMaxDouble() {
+        var max = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (max.doubleValue() < (this.items[i].doubleValue())) max = items[i];
+        }
+        return max.doubleValue();
+    }
+
 
     /**
      * Получить Минимальное значение массива
@@ -61,8 +123,69 @@ public class MyArrayList <T extends Number> extends MyListNumber {
      */
     @Override
     public T getMin() {
-        return null;
+        if (items[0] instanceof Double) return (T) getMinDouble();
+        if (items[0] instanceof Integer) return (T) getMinInteger();
+        if (items[0] instanceof Long) return (T) getMinLong();
+        if (items[0] instanceof Short) return (T) getMinShort();
+        if (items[0] instanceof Float) return (T) getMinFloat();
+        if (items[0] instanceof Byte) return (T) getMinByte();
+        // Крайний случай
+        var min = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (min.hashCode() > (this.items[i].hashCode())) min = items[i];
+        }
+        return min;
     }
+
+    private Byte getMinByte() {
+        var min = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (min.byteValue() > (this.items[i].byteValue())) min = items[i];
+        }
+        return min.byteValue();
+    }
+
+
+    private Float getMinFloat() {
+        var min = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (min.floatValue() > (this.items[i].floatValue())) min = items[i];
+        }
+        return min.floatValue();
+    }
+
+    private Short getMinShort() {
+        var min = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (min.shortValue() > (this.items[i].shortValue())) min = items[i];
+        }
+        return min.shortValue();
+    }
+
+    private Integer getMinInteger() {
+        var min = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (min.intValue() > (this.items[i].intValue())) min = items[i];
+        }
+        return min.intValue();
+    }
+
+    private Double getMinDouble() {
+        var min = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (min.doubleValue() > (this.items[i].doubleValue())) min = items[i];
+        }
+        return min.doubleValue();
+    }
+
+    private Long getMinLong() {
+        var min = items[0];
+        for (int i = 1; i < size ; i++) {
+            if (min.longValue() > (this.items[i].longValue())) min = items[i];
+        }
+        return min.longValue();
+    }
+
 
     /**
      * Поиск суммы элементов массива
@@ -71,7 +194,11 @@ public class MyArrayList <T extends Number> extends MyListNumber {
      */
     @Override
     public T getSum() {
-        return null;
+        Double sum = 0.0;
+        for (int i = 0; i < size; i++) {
+            sum= sum + items[i].doubleValue();
+        }
+        return (T) sum;
     }
 
     /**

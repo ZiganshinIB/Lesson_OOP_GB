@@ -1,6 +1,8 @@
 package seminar4.base;
 
-public abstract class MyListNumber<T extends Number> implements MyList, AllSorting {
+import java.util.Comparator;
+
+public abstract class MyListNumber<T extends Number > implements MyList, AllSorting {
     /**
      * Получить Максимальное значение массива
      * @return Максимальное значение массива
