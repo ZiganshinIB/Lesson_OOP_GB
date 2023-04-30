@@ -15,7 +15,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         System.out.println(items.length);
         size = 0;
     }
-
     /**
      * Создать Список с массивам
      * @param itemsArray массив
@@ -32,8 +31,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
             items[i] = itemsArray[i];
         }
     }
-
-
     /**
      * Пузырковая сортировка
      */
@@ -49,7 +46,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
             }
         }
     }
-
     /**
      * Получить Максимальное значение массива
      *
@@ -63,7 +59,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         }
         return max;
     }
-
     /**
      * Получить индекс Максимального значение массива
      *
@@ -77,7 +72,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         }
         return max;
     }
-
     /**
      * Получить Минимальное значение массива
      *
@@ -92,7 +86,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         }
         return min;
     }
-
     /**
      * Получить индекс Минимального значение массива
      *
@@ -106,8 +99,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         }
         return min;
     }
-
-
     /**
      * Поиск суммы элементов массива
      *
@@ -121,8 +112,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         }
         return (T) sum;
     }
-
-
     /**
      * Поиск произведения элементов массива
      *
@@ -137,7 +126,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         return (T) products;
 
     }
-
     /**
      * Добавление в конец списка массива элементов
      *
@@ -192,7 +180,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         size--;
         return res;
     }
-
     /**
      * Удаление всех элементов с заданным значением
      *
@@ -207,8 +194,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         }
         size=size-counter;
     }
-
-
     /**
      * Удаление всех элементов
      */
@@ -216,7 +201,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
     public void removeAll() {
         size=0; // Изи
     }
-
     /**
      * Поиск индекса заданного элемента в массиве, если такого элемента в массиве нет то возвращать -1
      *
@@ -228,7 +212,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         for (int i = 0; i < size; i++) if (items[i].equals(item)) return i;
         return -1;
     }
-
     /**
      * Проверка наличия элемента в массиве
      *
@@ -240,7 +223,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         for (int i = 0; i < size; i++) if (items[i].equals(item)) return true;
         return false;
     }
-
     /**
      * Получение элемента массива по индексу
      *
@@ -251,7 +233,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
     public Number getItem(int index) {
         return items[index];
     }
-
     /**
      * Задание значения элементу массива с заданным индексом
      *
@@ -262,8 +243,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
     public void setItem(Object item, int index) {
         items[index]=(T) item;
     }
-
-
     /**
      * Печать массива на экран
      */
@@ -275,7 +254,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         }
         System.out.println("]");
     }
-
     /**
      * Длинна массива
      *
@@ -285,7 +263,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
     public int getCountItems() {
         return size;
     }
-
     /**
      * Сортировка простыми вставками
      */
@@ -300,11 +277,6 @@ public class MyArrayList <T extends Number> implements MyListNumber {
             items[j] = swap;
         }
     }
-
-
-
-
-
     /**
      * Сортировка простым выбором
      */
@@ -313,7 +285,7 @@ public class MyArrayList <T extends Number> implements MyListNumber {
         for (int i = 0; i < items.length; i++) {
             // min is the index of the smallest element with an index greater or equal to i
             int min = i;
-            for (int j = i + 1; j < items.length; j++) {
+            for (int j = i  + 1; j < items.length; j++) {
                 if (items[j].doubleValue() < items[min].doubleValue()) {
                     min = j;
                 }
